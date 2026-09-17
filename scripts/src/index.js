@@ -2,6 +2,7 @@
 import 'core-js/actual'
 import $ from 'jquery'
 import 'bootstrap/js/dist/collapse'
+import 'bootstrap/js/dist/carousel'
 
 // Switch no-js to js class to enable JS-dependent styles
 document.documentElement.classList.remove('no-js')
