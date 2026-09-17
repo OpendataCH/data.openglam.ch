@@ -134,3 +134,20 @@ dataset a:hover {
   padding: .75rem 1rem;
   border-radius: .25rem;
 }
+
+.carousel-item {
+  height: 600px;
+  background-color: #777;
+}
+
+.carousel-item img {
+  object-fit: contain;
+  height: 600px;
+  width: 100%;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+}
