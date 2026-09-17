@@ -18,7 +18,7 @@ permalink: /datasets/
         <button type="button" class="btn-close" data-bs-toggle="collapse" data-bs-target="#sidebar-collapse" aria-label="Close"></button>
       </div>
       <h3>Categories</h3>
-      <div class="list-group js-shown" data-component="categories-filter" data-show="5"></div>
+      <div class="list-group js-shown" data-component="categories-filter" data-show="500"></div>
       <div class="list-group js-hidden">
         {% for category in site.dataset_categories %}
         {% assign count = site.datasets | where: "category", category.name | size %}
@@ -30,7 +30,7 @@ permalink: /datasets/
       </div>
       <br/>
       <h3>Organizations</h3>
-      <div class="list-group js-shown" data-component="organizations-filter" data-show="15"></div>
+      <div class="list-group js-shown" data-component="organizations-filter" data-show="500"></div>
       <div class="list-group js-hidden">
         {% for organization in site.organizations %}
         {% assign count = site.datasets | where: "organization", organization.title | size %}
