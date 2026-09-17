@@ -22,6 +22,12 @@ docker compose up
 ```
 And open it on http://127.0.0.1:4000
 
+
+Update minified javascript (in dist folder)
+```shell
+npm run build
+```
+
 ### Documentation
 * [Installation](docs/installation.md)
 * [Upgrading](docs/upgrading.md)
