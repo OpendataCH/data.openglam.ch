@@ -151,3 +151,8 @@ dataset a:hover {
   border-radius: 10px;
   padding: 10px;
 }
+
+.list-group-item.active {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+}
