@@ -37,20 +37,29 @@ export function createDatasetFilters (filters) {
 
 // Collapses a bootstrap list-group to only show a few items by default
 // Number of items to show can be specified in [data-show] attribute or passed as param
-export function collapseListGroup (container, show) {
-  if (!show) show = container.data('show') || 5
+export function collapseListGroup (container, show = 5) {
+  container = $(container)
 
-  const itemsToHide = $('.list-group-item:gt(' + (show - 1) + '):not(.active)', container)
+  show = container.data('show') || show
+
+  const items = container.find('.list-group-item:not(.active)')
+  const itemsToHide = items.slice(show)
+
   if (itemsToHide.length) {
     itemsToHide.hide()
 
-    const showMoreButton = $('<a href="#" class="list-group-item">Show ' + itemsToHide.length + ' more...</a>')
-    showMoreButton.on('click', function (e) {
-      itemsToHide.show()
-      $(this).off('click')
-      $(this).remove()
-      e.preventDefault()
+    const showMoreButton = $('<a>', {
+      href: '#',
+      class: 'list-group-item',
+      text: `Show ${itemsToHide.length} more...`
     })
+
+    showMoreButton.on('click', function (e) {
+      e.preventDefault()
+      itemsToHide.show()
+      $(this).remove()
+    })
+
     container.append(showMoreButton)
   }
 }

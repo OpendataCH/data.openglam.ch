@@ -3,6 +3,10 @@ import 'core-js/actual'
 import $ from 'jquery'
 import 'bootstrap/js/dist/collapse'
 
+// Switch no-js to js class to enable JS-dependent styles
+document.documentElement.classList.remove('no-js')
+document.documentElement.classList.add('js')
+
 import DatasetsList from './components/datasets-list'
 import CategoriesFilter from './components/categories-filter'
 import OrganizationsFilter from './components/organizations-filter'
