@@ -28,15 +28,15 @@ dataset {
 
 dataset a {
   text-decoration: none;
-  color: #8d7820;
+  color: #B50C0CFF;
 }
 
 dataset a:hover {
-  color: #b8a321;
+  color: #dd1313;
 }
 
 .bg-primary {
-  background-color: #b8a321 !important;
+  background-color: #dd1313 !important;
 }
 
 .list-group-item-truncate {

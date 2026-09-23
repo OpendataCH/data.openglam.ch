@@ -23,7 +23,7 @@ docker compose up
 And open it on http://127.0.0.1:4000
 
 
-Update minified javascript (in dist folder)
+Update bundled javascript (which is in scripts/dist folder) after a change in javascript files
 ```shell
 npm run build
 ```
