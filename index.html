@@ -2,19 +2,47 @@
 layout: default
 ---
 
-<div class="container d-flex flex-row p-5 mb-4 bg-light rounded-3 justify-content-between">
-  <div class="col-lg-6 justify-content-center">
-    <h1 class="display-5">{{ site.greeting }}</h1>
-    <p class="col-md-8 fs-4 mb-4">{{ site.description }}</p>
-    <a href="{{ "/datasets" | relative_url }}" class="btn btn-primary btn-lg" role="button">Browse all datasets</a>
+<div class="p-5 mb-5 bg-light rounded-3 shadow-sm border">
+  <div class="row align-items-center">
+    <div class="col-lg-8">
+      <h1 class="display-5 fw-bold text-dark mb-3">{{ site.greeting }}</h1>
+      <p class="lead text-muted mb-4">{{ site.description }}</p>
+      <a href="{{ "/datasets" | relative_url }}" class="btn btn-primary btn-lg px-4 shadow-sm" role="button">
+        <i class="fa fa-database me-2"></i> Browse all datasets
+      </a>
+    </div>
+    <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+      <a href="https://openglam.ch" target="_blank" rel="noopener noreferrer">
+        <img alt="OpenGLAM logo" class="img-fluid d-none d-md-inline-block" src="{{ site.baseurl }} {{ site.hero_image }}" style="max-height: 120px" />
+      </a>
+    </div>
   </div>
-  <a href="https://openglam.ch"><img alt="logo" class="d-none d-md-block" src="{{ site.baseurl }} {{ site.hero_image }}" style="max-height: 100px" /></a>
 </div>
 
-<p>Discover open cultural datasets from institutions across Switzerland, all in one place. While the datasets are hosted on various platforms, including <a href="https://opendata.swiss">opendata.swiss</a>, <a href="https://www.gbif.org">GBIF</a>, <a href="https://commons.wikimedia.org">Wikimedia Commons</a>, and <a href="https://zenodo.org">Zenodo</a>, this catalogue brings them together in a single, easy-to-browse collection.</p>
+<div class="card border-0 bg-light shadow-sm rounded-3 mb-5">
+  <div class="card-body p-4 p-md-5">
+    <p class="lead mb-0 text-secondary">
+      Discover open cultural datasets from institutions across Switzerland, all in one place. While the datasets are hosted on various platforms, including 
+      <a href="https://opendata.swiss" target="_blank" rel="noopener noreferrer" class="badge bg-white text-dark border text-decoration-none px-2 py-1 mx-1 shadow-sm"><i class="fa fa-external-link me-1 text-muted"></i>opendata.swiss</a>, 
+      <a href="https://www.gbif.org" target="_blank" rel="noopener noreferrer" class="badge bg-white text-dark border text-decoration-none px-2 py-1 mx-1 shadow-sm"><i class="fa fa-external-link me-1 text-muted"></i>GBIF</a>, 
+      <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer" class="badge bg-white text-dark border text-decoration-none px-2 py-1 mx-1 shadow-sm"><i class="fa fa-external-link me-1 text-muted"></i>Wikimedia Commons</a>, and 
+      <a href="https://zenodo.org" target="_blank" rel="noopener noreferrer" class="badge bg-white text-dark border text-decoration-none px-2 py-1 mx-1 shadow-sm"><i class="fa fa-external-link me-1 text-muted"></i>Zenodo</a>, 
+      this catalogue brings them together in a single, easy-to-browse collection.
+    </p>
+  </div>
+</div>
 
-<h2>Some examples</h2>
-<div id="infoSessionCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+<div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+  <h2 class="h3 fw-bold text-dark mb-0">
+    Featured Examples
+  </h2>
+  <a href="{{ "/datasets" | relative_url }}" class="text-decoration-none small text-muted">
+    View all datasets <i class="fa fa-arrow-right ms-1"></i>
+  </a>
+</div>
+<p class="text-muted mb-4">Explore selected highlights and diverse media formats available across the catalogue.</p>
+
+<div id="infoSessionCarousel" class="carousel slide rounded-3 shadow-sm overflow-hidden mb-5" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#infoSessionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#infoSessionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -28,123 +56,102 @@ layout: default
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{ site.baseurl }}/img/carousel/slide1.png" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Manuscripts</h5>
-        <p>Aarau, Aargauer Kantonsbibliothek, MsWettFm 2: Graduale oesa, Proprium de tempore, pars aestivalis. 1330-1335
-          Public Domain
-          https://e-codices.ch/de/list/one/kba/WettFm0002
-        </p>
-        <p>
-          <a href="https://opendata.swiss/en/dataset/basic-metadata-of-the-virtual-manuscript-library-of-switzerland" class="btn btn-primary" role="button">Dataset</a>
-          <a href="https://e-codices.ch/de/list/one/kba/WettFm0002" class="btn btn-secondary" role="button">Link</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide1.png" class="d-block w-100" alt="Manuscripts">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Manuscripts</h5>
+        <p class="mb-2 d-none d-md-block">Aarau, Aargauer Kantonsbibliothek, MsWettFm 2: Graduale oesa, Proprium de tempore, pars aestivalis. 1330-1335 (Public Domain)</p>
+        <div>
+          <a href="https://opendata.swiss/en/dataset/basic-metadata-of-the-virtual-manuscript-library-of-switzerland" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="https://e-codices.ch/de/list/one/kba/WettFm0002" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-external-link me-1"></i> Link</a>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ site.baseurl }}/img/carousel/slide2.png" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Journals</h5>
-        <p>Gazette de Lausanne, 24 septembre 1919. CC-BY.</p>
-        <p>
-          <a href="https://opendata.swiss/en/dataset/journal-de-geneve-gazette-de-lausanne-1914" class="btn btn-primary" role="button">Dataset</a>
-          <a href="https://www.letempsarchives.ch/page/GDL_1919_09_24/1" class="btn btn-secondary" role="button">Link</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide2.png" class="d-block w-100" alt="Journals">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Journals</h5>
+        <p class="mb-2 d-none d-md-block">Gazette de Lausanne, 24 septembre 1919. CC-BY.</p>
+        <div>
+          <a href="https://opendata.swiss/en/dataset/journal-de-geneve-gazette-de-lausanne-1914" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="https://www.letempsarchives.ch/page/GDL_1919_09_24/1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-external-link me-1"></i> Link</a>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ site.baseurl }}/img/carousel/slide3.jpg" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Letters</h5>
-        <p>Brief an [Johann Bernoulli] / von [Anton Friedrich] Büsching - [Berlin] , 15. Dez. 1784
-          Basel, Universitätsbibliothek, UBH L Ia 682:Bl.176
-        </p>
-        <p>
-          <a href="https://opendata.swiss/dataset/e-manuscripta-the-digital-platform-for-manuscript-material-from-swiss-libraries-and-archives" class="btn btn-primary" role="button">Dataset</a>
-          <a href="https://doi.org/10.7891/e-manuscripta-136804" class="btn btn-secondary" role="button">Link</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide3.jpg" class="d-block w-100" alt="Letters">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Letters</h5>
+        <p class="mb-2 d-none d-md-block">Brief an [Johann Bernoulli] / von [Anton Friedrich] Büsching - [Berlin] , 15. Dez. 1784. Basel, Universitätsbibliothek, UBH L Ia 682:Bl.176</p>
+        <div>
+          <a href="https://opendata.swiss/dataset/e-manuscripta-the-digital-platform-for-manuscript-material-from-swiss-libraries-and-archives" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="https://doi.org/10.7891/e-manuscripta-136804" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-external-link me-1"></i> Link</a>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ site.baseurl }}/img/carousel/slide4.png" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Photographs</h5>
-        <p>Lucerne v.O. from 400 m, ETH-Bibliothek Zürich, Bildarchiv, Fotograf: Mittelholzer, Walter (1894-1937). 1931.
-          Public domain.
-        </p>
-        <p>
-          <a href="https://opendata.swiss/en/dataset/photos-by-the-swiss-photographer-pilot-and-aviation-pioneer-walter-mittelholzer-1894-1937" class="btn btn-primary" role="button">Dataset</a>
-          <a href="http://doi.org/10.3932/ethz-a-000297972" class="btn btn-secondary" role="button">Link</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide4.png" class="d-block w-100" alt="Photographs">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Photographs</h5>
+        <p class="mb-2 d-none d-md-block">Lucerne v.O. from 400 m, ETH-Bibliothek Zürich, Bildarchiv, Fotograf: Mittelholzer, Walter (1894-1937). 1931. Public domain.</p>
+        <div>
+          <a href="https://opendata.swiss/en/dataset/photos-by-the-swiss-photographer-pilot-and-aviation-pioneer-walter-mittelholzer-1894-1937" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="http://doi.org/10.3932/ethz-a-000297972" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-external-link me-1"></i> Link</a>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ site.baseurl }}/img/carousel/slide5.jpg" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Photographs</h5>
-        <p>Zytturm in Zug, Glasplatten (Bibliothek Zug), Undated.
-          CC0 1.0
-        </p>
-        <p>
-          <a href="https://zenodo.org/records/13453393" class="btn btn-primary" role="button">Dataset</a>
-          <a href="https://n2t.net/ark:/63274/bz18q95" class="btn btn-secondary" role="button">Link</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide5.jpg" class="d-block w-100" alt="Photographs">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Photographs</h5>
+        <p class="mb-2 d-none d-md-block">Zytturm in Zug, Glasplatten (Bibliothek Zug), Undated. CC0 1.0</p>
+        <div>
+          <a href="https://zenodo.org/records/13453393" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="https://n2t.net/ark:/63274/bz18q95" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-external-link me-1"></i> Link</a>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ site.baseurl }}/img/carousel/slide6.png" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Photographs</h5>
-        <p>Sean Connery as James Bond 007 and Tania Mallet as Tilly Masterson in "Goldfinger" while filming at Furka Pass and Andermatt in the Swiss Alps. 1964.
-
-          ETH-Bibliothek Zürich, Bildarchiv / Fotograf: Comet Photo AG (Zürich) / Com_C13-035-007 / CC BY-SA 4.0
-        </p>
-        <p>
-          <a href="https://opendata.swiss/en/dataset/media-on-wikimedia-commons-contributed-by-the-eth-library" class="btn btn-primary" role="button">Dataset</a>
-          <a href="https://w.wiki/NqpL" class="btn btn-secondary" role="button">Object Link</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide6.png" class="d-block w-100" alt="Photographs">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Photographs</h5>
+        <p class="mb-2 d-none d-md-block">Sean Connery as James Bond 007 and Tania Mallet as Tilly Masterson in "Goldfinger" while filming at Furka Pass and Andermatt in the Swiss Alps. 1964. ETH-Bibliothek Zürich, Bildarchiv / Comet Photo AG (Zürich) / CC BY-SA 4.0</p>
+        <div>
+          <a href="https://opendata.swiss/en/dataset/media-on-wikimedia-commons-contributed-by-the-eth-library" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="https://w.wiki/NqpL" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-external-link me-1"></i> Object Link</a>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ site.baseurl }}/img/carousel/slide7.png" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Photographs</h5>
-        <p>Féra du Léman - collection d'animaux disparus, Musée de zoologie de Lausanne
-          CC BY-SA 4.0 Wikimedia Commons
-        </p>
-        <p>
-          <a href="https://commons.wikimedia.org/wiki/Category:Mus%C3%A9e_cantonal_de_zoologie_(Lausanne)" class="btn btn-primary" role="button">Dataset</a>
-          <a href="https://w.wiki/63eq" class="btn btn-secondary" role="button">Object Link</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide7.png" class="d-block w-100" alt="Photographs">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Photographs</h5>
+        <p class="mb-2 d-none d-md-block">Féra du Léman - collection d'animaux disparus, Musée de zoologie de Lausanne. CC BY-SA 4.0 Wikimedia Commons</p>
+        <div>
+          <a href="https://commons.wikimedia.org/wiki/Category:Mus%C3%A9e_cantonal_de_zoologie_(Lausanne)" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="https://w.wiki/63eq" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-external-link me-1"></i> Object Link</a>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ site.baseurl }}/img/carousel/slide8.png" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Photographs</h5>
-        <p>Polypodium interjectum Shivas
-          Nyffeler R, Guggisberg A (2026). United Herbaria of the University and ETH Zurich.
-          Occurrence dataset
-          Public Domain
-        </p>
-        <p>
-          <a href="https://doi.org/10.15468/tjvqci" class="btn btn-primary" role="button">Dataset</a>
-          <a href="https://www.gbif.org/occurrence/6318748306" class="btn btn-secondary" role="button">Object Link</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide8.png" class="d-block w-100" alt="Photographs">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Photographs</h5>
+        <p class="mb-2 d-none d-md-block">Polypodium interjectum Shivas, Nyffeler R, Guggisberg A (2026). United Herbaria of the University and ETH Zurich. Occurrence dataset (Public Domain)</p>
+        <div>
+          <a href="https://doi.org/10.15468/tjvqci" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="https://www.gbif.org/occurrence/6318748306" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-external-link me-1"></i> Object Link</a>
+        </div>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ site.baseurl }}/img/carousel/slide9.png" class="d-block w-100">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Metadata</h5>
-        <p>Visualization of instruments used.
-          Based on Metadata of all concerts of the Montreux Jazz Festival
-          Public Domain
-        </p>
-        <p>
-          <a href="https://opendata.swiss/de/dataset/metadata-montreux-jazz-festival" class="btn btn-primary" role="button">Dataset</a>
-          <a href="https://query.wikidata.org/#%23defaultView%3ABubbleChart%0A%0ASELECT%20DISTINCT%20%3Fwd_instrument%20%3Finstrument_name%20%28count%28%3Fwd_instrument%29%20as%20%3Fc_instrument%29%0AWHERE%20%7B%20%0A%20%20%20%20%7B%20%3Fwd_item%20wdt%3AP8301%20%3Fmjf_person%20.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20%3Fwd_item%20wdt%3AP1303%20%3Fwd_instrument%20.%20%7D%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20%0A%20%20%20%20%20%20%20%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%0A%20%20%20%20%20%20%20%20%3Fwd_instrument%20rdfs%3Alabel%20%3Finstrument_name%0A%20%20%20%20%7D%20%0A%7D%20%0AGROUP%20BY%20%3Fwd_instrument%20%3Finstrument_name%20%3Fc_instrument%0AORDER%20BY%20DESC%28%3Fc_instrument%29" class="btn btn-secondary" role="button">Visalization</a>
-        </p>
+      <img src="{{ site.baseurl }}/img/carousel/slide9.png" class="d-block w-100" alt="Metadata">
+      <div class="carousel-caption">
+        <h5 class="fw-bold">Metadata</h5>
+        <p class="mb-2 d-none d-md-block">Visualization of instruments used. Based on Metadata of all concerts of the Montreux Jazz Festival (Public Domain)</p>
+        <div>
+          <a href="https://opendata.swiss/de/dataset/metadata-montreux-jazz-festival" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm me-2" role="button"><i class="fa fa-database me-1"></i> Dataset</a>
+          <a href="https://query.wikidata.org/#%23defaultView%3ABubbleChart%0A%0ASELECT%20DISTINCT%20%3Fwd_instrument%20%3Finstrument_name%20%28count%28%3Fwd_instrument%29%20as%20%3Fc_instrument%29%0AWHERE%20%7B%20%0A%20%20%20%20%7B%20%3Fwd_item%20wdt%3AP8301%20%3Fmjf_person%20.%20%7D%0A%20%20%20%20OPTIONAL%20%7B%20%3Fwd_item%20wdt%3AP1303%20%3Fwd_instrument%20.%20%7D%0A%20%20%20%20SERVICE%20wikibase%3Alabel%20%7B%20%0A%20%20%20%20%20%20%20%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22%20.%0A%20%20%20%20%20%20%20%20%3Fwd_instrument%20rdfs%3Alabel%20%3Finstrument_name%0A%20%20%20%20%7D%20%0A%7D%20%0AGROUP%20BY%20%3Fwd_instrument%20%3Finstrument_name%20%3Fc_instrument%0AORDER%20BY%20DESC%28%3Fc_instrument%29" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" role="button"><i class="fa fa-bar-chart me-1"></i> Visualization</a>
+        </div>
       </div>
     </div>
   </div>
@@ -158,8 +165,28 @@ layout: default
   </button>
 </div>
 
-
-<h2>Contribute</h2>
-<p>Help us expand this catalogue by <a href="https://github.com/OpendataCH/data.openglam.ch/issues/new?template=propose-a-missing-dataset.md">contributing your own datasets</a>. You can also write us at <a href="mailto:info@opendata.ch">info@opendata.ch</a>. Your contributions will enrich the collection and make it more comprehensive for everyone.</p>
-
-<p>Help us make this catalogue more comprehensive! Know of an open cultural dataset that is missing? <a href="https://github.com/OpendataCH/data.openglam.ch/issues/new?template=propose-a-missing-dataset.md">Suggest a dataset on GitHub</a> or contact us at <a href="mailto:info@opendata.ch">info@opendata.ch</a>. Every contribution helps make Switzerland’s open cultural data easier to discover and access. This site is curated by the <a href="https://openglam.ch">OpenGLAM CH Working Group</a>.</p>
+<div class="card border-0 bg-light shadow-sm rounded-3 mb-5">
+  <div class="card-body p-4 p-md-5">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-8">
+        <h2 class="h3 fw-bold text-dark mb-2">
+          Contribute
+        </h2>
+        <p class="text-muted mb-2">
+          Help us make this catalogue more comprehensive! Know of an open cultural dataset that is missing, or want to contribute your institution's data?
+        </p>
+        <p class="text-secondary small mb-0">
+          Every contribution helps make Switzerland’s open cultural data easier to discover and access. This site is curated by the <a href="https://openglam.ch" target="_blank" rel="noopener noreferrer">OpenGLAM CH Working Group</a>.
+        </p>
+      </div>
+      <div class="col-lg-4 d-flex flex-column flex-sm-row flex-lg-column gap-2 justify-content-lg-center">
+        <a href="https://github.com/OpendataCH/data.openglam.ch/issues/new?template=propose-a-missing-dataset.md" target="_blank" rel="noopener noreferrer" class="btn btn-primary shadow-sm text-nowrap">
+          <i class="fa fa-github me-1"></i> Suggest a dataset
+        </a>
+        <a href="mailto:info@opendata.ch" class="btn btn-outline-secondary text-nowrap">
+          <i class="fa fa-envelope-o me-1"></i> Contact us
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
