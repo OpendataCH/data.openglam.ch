@@ -39,6 +39,16 @@ dataset a:hover {
   background-color: #dd1313 !important;
 }
 
+.btn-primary {
+  background-color: #dd1313;
+  border-color: #dd1313;
+}
+
+.btn-primary:hover {
+  background-color: #B50C0CFF;
+  border-color: #B50C0CFF;
+}
+
 .list-group-item-truncate {
   display: inline-block;
   line-height: 1;
