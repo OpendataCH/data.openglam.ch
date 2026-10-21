@@ -2,11 +2,13 @@
   --bs-primary: #b8a321;
 }
 
-input[data-hook=search-query] {
+input[data-hook=search-query],
+.search-container {
   display: none;
 }
 
-.js input[data-hook=search-query] {
+.js input[data-hook=search-query],
+.js .search-container {
   display: block;
 }
 
@@ -75,7 +77,8 @@ dataset a:hover {
   font-size: 80%;
 }
 
-.collapse.d-sm-block:not(.show) {
+.collapse.d-sm-block:not(.show),
+.collapse.d-md-block:not(.show) {
   display: none;
 }
 
@@ -98,6 +101,33 @@ dataset a:hover {
   .collapse.d-sm-block {
     display: block !important;
   }
+}
+
+@media (min-width: 768px) {
+  .collapse.d-md-block {
+    display: block !important;
+  }
+}
+
+.dataset-card {
+  transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.dataset-card:hover {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.08) !important;
+}
+
+.dataset-title-link:hover {
+  color: #dd1313 !important;
+}
+
+.dataset-notes {
+  overflow-wrap: break-word;
+  line-height: 1.55;
+}
+
+.dataset-notes p:last-child {
+  margin-bottom: 0;
 }
 
 .card-grid {

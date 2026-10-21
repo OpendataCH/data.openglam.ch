@@ -1,6 +1,34 @@
 {% for dataset in include.datasets %}
-<dataset>
-  <h3><a href="{{ site.baseurl }}{{ dataset.url }}">{{ dataset.title }}</a></h3>
-  {{ dataset.notes | markdownify | truncate: 300, '...' }}
-</dataset>
+{% assign first_resource = dataset.resources | first %}
+<div class="card dataset-card border-0 bg-light shadow-sm rounded-3 mb-3">
+  <div class="card-body p-4">
+    <h3 class="h5 fw-bold mb-2">
+      <a href="{% if first_resource.url %}{{ first_resource.url }}{% else %}{{ site.baseurl }}{{ dataset.url }}{% endif %}" {% if first_resource.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %} class="text-dark text-decoration-none dataset-title-link">
+        {{ dataset.title }}{% if first_resource.url contains 'http' %} <i class="fa fa-external-link text-muted ms-1" style="font-size: 0.75rem;"></i>{% endif %}
+      </a>
+    </h3>
+    {% if dataset.organization and dataset.organization != empty %}
+    <div class="dataset-organization text-secondary mb-2">
+      <i class="fa fa-university me-1 text-muted"></i>{{ dataset.organization }}
+    </div>
+    {% endif %}
+    <div class="dataset-meta d-flex flex-wrap align-items-center mb-2">
+      {% if dataset.data_host and dataset.data_host != empty %}
+        {% for host in dataset.data_host %}
+        <span class="badge bg-white text-dark border me-1 mb-2 shadow-sm"><i class="fa fa-external-link me-1 text-muted"></i>{{ host }}</span>
+        {% endfor %}
+      {% endif %}
+      {% if dataset.category and dataset.category != empty %}
+        {% for cat in dataset.category %}
+        <span class="badge bg-white text-secondary border me-1 mb-2 shadow-sm"><i class="fa fa-tag me-1 text-muted"></i>{{ cat }}</span>
+        {% endfor %}
+      {% endif %}
+    </div>
+    {% if dataset.notes and dataset.notes != empty %}
+    <div class="dataset-notes text-secondary mb-0 small">
+      {{ dataset.notes | markdownify | truncatewords: 50 }}
+    </div>
+    {% endif %}
+  </div>
+</div>
 {% endfor %}

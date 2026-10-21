@@ -4,34 +4,74 @@ layout: default
 {% assign datasets = site.datasets | where: "category", page.name %}
 {% assign datasets_count = datasets | size %}
 
-<div class="container">
-  <div class="row">
-    {% if page.logo and page.logo != empty %}
-    <div class="col-sm-3">
-      <a href="{{ page.logo | relative_url }}" class="card-grid-item"><img class="img-thumbnail rounded mx-auto d-block" src="{{ page.logo | relative_url }}" alt="{{ page.title }} logo"></a>
+<div class="p-4 p-md-5 mb-5 bg-light rounded-3 shadow-sm border">
+  <div class="row align-items-center">
+    <div class="col-lg-8">
+      <h1 class="display-5 fw-bold text-dark mb-2">{{ page.name }}</h1>
+      <p class="lead text-muted mb-0">{{ page.description }}</p>
     </div>
-    <div class="col-sm-9">
-    {% else %}
-    <div class="col-sm-12">
-    {% endif %}
-      <h1>
-        {{ page.name }}
-      </h1>
-      <p>{{ page.description }}</p>
-      <div data-component="datasets-list" data-category="{{ page.name | slugify }}">
-        <h3 class="datasets-count" data-hook="datasets-count">{{ datasets_count }}
-          {% if datasets_count == 1 %}dataset{% else %}datasets{% endif %}</h3>
-        <input type="text" data-hook="search-query" placeholder="Search..." class="form-control mb-3">
-        <div data-hook="datasets-items">
-          {% for dataset in datasets %}
-           <dataset>
-             <h3><a href="{{ site.baseurl }}{{ dataset.url }}">{{ dataset.title }}</a></h3>
-             {{ dataset.notes | markdownify }}
-             
-           </dataset>
-          {% endfor %}
-         </div>
+    <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+      {% if page.logo and page.logo != empty %}
+        <img class="img-fluid rounded shadow-sm" src="{{ page.logo | relative_url }}" alt="{{ page.name }} logo" style="max-height: 90px;">
+      {% else %}
+        <span class="badge bg-white text-dark border px-3 py-2 shadow-sm fs-6">
+          <i class="fa fa-folder-open text-primary me-2"></i>{{ datasets_count }} {% if datasets_count == 1 %}Dataset{% else %}Datasets{% endif %}
+        </span>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div data-component="datasets-list" data-category="{{ page.name | slugify }}">
+  <div class="search-container mb-4">
+    <div class="input-group input-group-lg shadow-sm rounded-3 overflow-hidden border">
+      <span class="input-group-text bg-white border-0 text-muted ps-3">
+        <i class="fa fa-search"></i>
+      </span>
+      <input type="text" data-hook="search-query" placeholder="Search datasets in {{ page.name }}..." class="form-control border-0 py-2 shadow-none" aria-label="Search datasets">
+    </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-2">
+    <h2 class="h4 fw-bold text-dark mb-0">
+      <i class="fa fa-database text-primary me-2"></i><span class="datasets-count" data-hook="datasets-count">{{ datasets_count }} {% if datasets_count == 1 %}dataset{% else %}datasets{% endif %}</span>
+    </h2>
+  </div>
+
+  <div data-hook="datasets-items">
+    {% for dataset in datasets %}
+    {% assign first_resource = dataset.resources | first %}
+    <div class="card dataset-card border-0 bg-light shadow-sm rounded-3 mb-3">
+      <div class="card-body p-4">
+        <h3 class="h5 fw-bold mb-2">
+          <a href="{% if first_resource.url %}{{ first_resource.url }}{% else %}{{ site.baseurl }}{{ dataset.url }}{% endif %}" {% if first_resource.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %} class="text-dark text-decoration-none dataset-title-link">
+            {{ dataset.title }}{% if first_resource.url contains 'http' %} <i class="fa fa-external-link text-muted ms-1" style="font-size: 0.75rem;"></i>{% endif %}
+          </a>
+        </h3>
+        {% if dataset.organization and dataset.organization != empty %}
+        <div class="dataset-organization text-secondary mb-2">
+          <i class="fa fa-university me-1 text-muted"></i>{{ dataset.organization }}
+        </div>
+        {% endif %}
+        <div class="dataset-meta d-flex flex-wrap align-items-center mb-2">
+          {% if dataset.data_host and dataset.data_host != empty %}
+            {% for host in dataset.data_host %}
+            <span class="badge bg-white text-dark border me-1 mb-2 shadow-sm"><i class="fa fa-external-link me-1 text-muted"></i>{{ host }}</span>
+            {% endfor %}
+          {% endif %}
+          {% if dataset.category and dataset.category != empty %}
+            {% for cat in dataset.category %}
+            <span class="badge bg-white text-secondary border me-1 mb-2 shadow-sm"><i class="fa fa-tag me-1 text-muted"></i>{{ cat }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
+        {% if dataset.notes and dataset.notes != empty %}
+        <div class="dataset-notes text-secondary mb-0 small">
+          {{ dataset.notes | markdownify }}
+        </div>
+        {% endif %}
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>

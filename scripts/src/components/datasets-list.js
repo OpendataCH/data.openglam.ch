@@ -47,7 +47,8 @@ export default class {
       setContent(elements.datasetsItems, resultsMarkup)
 
       // Dataset count
-      const resultsCountMarkup = results.length + ' datasets'
+      const resultsSuffix = results.length === 1 ? '' : 's'
+      const resultsCountMarkup = results.length + ' dataset' + resultsSuffix
       setContent(elements.datasetsCount, resultsCountMarkup)
     })
   }
