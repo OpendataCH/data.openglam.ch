@@ -2,7 +2,6 @@
 schema: default
 title: 'VSJF-Refugees Migration 1898-1975'
 organization: 'Archiv für Zeitgeschichte, ETH Zürich'
-notes: Wonderful datasets
 
 resources:
   - name: 'VSJF-Refugees Migration 1898-1975'
