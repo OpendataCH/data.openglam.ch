@@ -28,6 +28,11 @@ Update bundled javascript (which is in scripts/dist folder) after a change in ja
 npm run build
 ```
 
+To modify js locally and test / debug without building
+```shell
+npm run watch
+```
+
 ### Documentation
 * [Installation](docs/installation.md)
 * [Upgrading](docs/upgrading.md)
