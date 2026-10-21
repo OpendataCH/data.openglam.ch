@@ -5,7 +5,7 @@ organization: 'Schweizerische Nationalbibliothek'
 
 resources:
   - name: 'Manuskripte Friedrich Glauser'
-    url: 'https://opendata.swiss/en/dataset/manuskripte-friedrich-glauser'
+    url: 'https://opendata.swiss/en/dataset/manuskripte-friedrich-glauser1'
 category:
   - Documents
 data_host:

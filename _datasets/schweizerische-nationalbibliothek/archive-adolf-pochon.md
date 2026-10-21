@@ -5,7 +5,7 @@ organization: 'Schweizerische Nationalbibliothek'
 
 resources:
   - name: 'Archive Adolf Pochon'
-    url: 'https://opendata.swiss/en/dataset/sammlung-pochon'
+    url: 'https://opendata.swiss/en/dataset/archiv-adolf-pochon'
 category:
   - Documents
 data_host:

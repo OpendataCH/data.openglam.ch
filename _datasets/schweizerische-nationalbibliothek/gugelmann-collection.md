@@ -5,7 +5,7 @@ organization: 'Schweizerische Nationalbibliothek'
 
 resources:
   - name: 'Gugelmann Collection'
-    url: 'https://opendata.swiss/en/dataset/the-gugelmann-collection-schweizer-kleinmeister'
+    url: 'https://opendata.swiss/en/dataset/sammlung-gugelmann-schweizer-kleinmeister'
 category:
   - Images
 data_host:

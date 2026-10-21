@@ -5,7 +5,7 @@ organization: 'Schweizerische Nationalbibliothek'
 
 resources:
   - name: 'Archiv Photoglob-Wehrli'
-    url: 'https://opendata.swiss/de/dataset/archiv-photoglob-wehrli'
+    url: 'https://opendata.swiss/en/dataset/archiv-photoglob-wehrli'
 category:
   - Images
 data_host:

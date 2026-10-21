@@ -5,7 +5,7 @@ organization: 'Schweizerisches Nationalmuseum'
 
 resources:
   - name: 'Representative sample from the Archeological Collection (images and metadata)'
-    url: 'https://opendata.swiss/en/dataset/archaologie'
+    url: 'https://opendata.swiss/en/dataset/reprasentative-auswahl-aus-der-sammlung-archaologie-des-schweizerischen-nationalmuseums'
 category:
   - Images
 data_host:
