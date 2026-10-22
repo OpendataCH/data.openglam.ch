@@ -13,8 +13,13 @@ export default (data) => {
     .map(c => `<span class="badge bg-white text-secondary border me-1 mb-2 shadow-sm"><i class="fa fa-tag me-1 text-muted"></i>${c}</span>`)
     .join('')
 
-  const badges = (hostBadges || catBadges)
-    ? `<div class="dataset-meta d-flex flex-wrap align-items-center mb-2">${hostBadges}${catBadges}</div>`
+  const tags = Array.isArray(data.tag) ? data.tag : (data.tag ? [data.tag] : [])
+  const tagBadges = tags
+    .map(t => `<span class="badge bg-primary text-white border me-1 mb-2 shadow-sm"><i class="fa fa-tags me-1"></i>${t}</span>`)
+    .join('')
+
+  const badges = (hostBadges || catBadges || tagBadges)
+    ? `<div class="dataset-meta d-flex flex-wrap align-items-center mb-2">${hostBadges}${catBadges}${tagBadges}</div>`
     : ''
 
   const notes = data.notes

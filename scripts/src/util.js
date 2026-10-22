@@ -34,6 +34,10 @@ export function createDatasetFilters (filters) {
     if (filters.data_host) {
       conditions.push(dataset.data_host && slugify(dataset.data_host).indexOf(filters.data_host) !== -1)
     }
+    if (filters.tag) {
+      const tags = Array.isArray(dataset.tag) ? dataset.tag : (dataset.tag ? [dataset.tag] : [])
+      conditions.push(tags.length && tags.some(t => slugify(t) === filters.tag))
+    }
     return conditions.every(function (value) { return !!value })
   }
 }
