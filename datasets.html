@@ -55,7 +55,7 @@ permalink: /datasets/
           <h3 class="h6 text-uppercase fw-bold text-muted mb-3">
             <i class="fa fa-university text-primary me-2"></i>Organizations
           </h3>
-          <div class="list-group list-group-flush rounded-3 js-shown" data-component="organizations-filter" data-show="500"></div>
+          <div class="list-group list-group-flush rounded-3 js-shown" data-component="organizations-filter" data-show="10"></div>
           <div class="list-group list-group-flush rounded-3 js-hidden">
             {% for organization in site.organizations %}
             {% assign count = site.datasets | where: "organization", organization.title | size %}

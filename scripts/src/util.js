@@ -49,7 +49,8 @@ export function collapseListGroup (container, show = 5) {
   const itemsToHide = items.slice(show)
 
   if (itemsToHide.length) {
-    itemsToHide.hide()
+    // Use Bootstrap utility class to ensure we override any display: * !important (e.g., d-flex)
+    itemsToHide.addClass('d-none')
 
     const showMoreButton = $('<a>', {
       href: '#',
@@ -59,7 +60,8 @@ export function collapseListGroup (container, show = 5) {
 
     showMoreButton.on('click', function (e) {
       e.preventDefault()
-      itemsToHide.show()
+      // Reveal hidden items by removing the utility class
+      itemsToHide.removeClass('d-none')
       $(this).remove()
     })
 

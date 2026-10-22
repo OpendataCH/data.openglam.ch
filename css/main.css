@@ -16,6 +16,11 @@ input[data-hook=search-query],
 .js-shown { display: none; }
 .js .js-shown { display: block; }
 
+/* Ensure elements hidden via inline style by scripts remain hidden even if utility classes set display with !important */
+.list-group .list-group-item[style*="display: none"] {
+  display: none !important;
+}
+
 .organization-thumbnail img,
 .category-thumbnail img {
   width: 64px;
