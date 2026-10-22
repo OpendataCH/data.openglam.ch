@@ -3,11 +3,6 @@ export default (data) => {
     ? `<div class="dataset-organization text-secondary mb-2"><i class="fa fa-university me-1 text-muted"></i>${data.organization}</div>`
     : ''
 
-  const hosts = Array.isArray(data.data_host) ? data.data_host : (data.data_host ? [data.data_host] : [])
-  const hostBadges = hosts
-    .map(h => `<span class="badge bg-white text-dark border me-1 mb-2 shadow-sm"><i class="fa fa-external-link me-1 text-muted"></i>${h}</span>`)
-    .join('')
-
   const cats = Array.isArray(data.category) ? data.category : (data.category ? [data.category] : [])
   const catBadges = cats
     .map(c => `<span class="badge bg-white text-secondary border me-1 mb-2 shadow-sm"><i class="fa fa-tag me-1 text-muted"></i>${c}</span>`)
@@ -18,8 +13,13 @@ export default (data) => {
     .map(t => `<span class="badge bg-primary text-white border me-1 mb-2 shadow-sm"><i class="fa fa-tags me-1"></i>${t}</span>`)
     .join('')
 
-  const badges = (hostBadges || catBadges || tagBadges)
-    ? `<div class="dataset-meta d-flex flex-wrap align-items-center mb-2">${hostBadges}${catBadges}${tagBadges}</div>`
+  const hosts = Array.isArray(data.data_host) ? data.data_host : (data.data_host ? [data.data_host] : [])
+  const hostBadges = hosts
+      .map(h => `<span class="badge bg-white text-dark border me-1 mb-2 shadow-sm">${h}</span>`)
+      .join('')
+
+  const badges = (catBadges || tagBadges || hostBadges)
+    ? `<div class="dataset-meta d-flex flex-wrap align-items-center mb-2">${catBadges}${tagBadges}${hostBadges}</div>`
     : ''
 
   const notes = data.notes
