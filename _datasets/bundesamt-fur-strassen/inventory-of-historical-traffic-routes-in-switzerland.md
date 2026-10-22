@@ -5,9 +5,9 @@ organization: 'Bundesamt für Strassen'
 
 resources:
   - name: 'Inventory of Historical Traffic Routes in Switzerland'
-    url: 'https://make.opendata.ch/wiki/data:glam_ch#inventory_of_historical_traffic_routes_in_switzerland'
+    url: 'https://opendata.swiss/de/dataset?keywords_de=historischer-verkehrsweg'
 category:
   - Metadata
 data_host:
-  - 'make wiki opendata.ch'
+  - 'opendata.swiss'
 ---
