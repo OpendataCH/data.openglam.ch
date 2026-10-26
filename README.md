@@ -3,9 +3,7 @@
 ## Hints for adding new datasets
 
 - Add yml file inside _datasets
-- Use subfolder with institution name in English
-- The url is defined by the yml file name
-- 
+- Use subfolder with institution name in german for german institutions and in french for french-speaking institution
 
 
 ## Software behind the tool : JKAN
