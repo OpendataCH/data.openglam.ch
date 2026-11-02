@@ -8,3 +8,4 @@ _config.ci.yml
 .parcel-cache
 vendor
 .idea
+__pycache__
