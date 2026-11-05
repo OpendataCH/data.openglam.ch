@@ -11,4 +11,6 @@ category:
   - Images
 data_host:
   - 'gbif'
+tag:
+  - 'glamhack2026'
 ---
