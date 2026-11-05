@@ -7,7 +7,7 @@ resources:
   - name: 'Stereoscopic Photographs by Heinrich Sallenbach'
     url: 'https://opendata.swiss/en/dataset/stereoscopic-photographs-by-heinrich-sallenbach'
 category:
-  - images
+  - Images
 data_host:
   - 'opendata.swiss'
 tag: 
